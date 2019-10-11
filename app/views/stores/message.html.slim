@@ -1,0 +1,19 @@
+= link_to '加盟店へ', store_path(id: @chatRoom.site.store_id)
+
+- site = Site.find(@chatRoom.site_id)
+
+= form_for :items, url: set_item_store_path, html: {class: 'item-select-form'} do |f|
+	.items
+		- site.items.all.each do |item|
+			.field
+				= f.radio_button :item_id, item.id, checked: item.selected == true, required: true
+				= f.label "item_id_#{item.id}".to_sym, item.name
+				= f.hidden_field :url, value: item.url
+	buttn.item-select 商品選択
+
+.chat-dlg
+	h2.title チャット
+	.content.hidden
+		#messages.admin
+			= render 'messages'
+		= render 'send_box', toUser: true

@@ -1,0 +1,19 @@
+= link_to '加盟店リストへ', admins_path
+
+- unless get_store_error.nil?
+	- get_store_error.each do |attr, msg|
+		- msg.each do |error|
+			- unless error.include?('auth_id.invalid')
+				p = error
+
+= form_for :store, url: admins_path, html: {} do |f|
+	.field
+		= f.label :auth_id, 'ID : '
+		= f.text_field :auth_id, required: true
+	.field
+		= f.label :name, '名前'
+		= f.text_field :name, required: true
+	.field
+		= f.label :auth_password, 'パスワード'
+		= f.text_field :auth_password, required: true
+	= f.submit '作成'

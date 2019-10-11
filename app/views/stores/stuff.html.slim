@@ -1,0 +1,12 @@
+= link_to '加盟店へ', store_path(id: @store.id)
+
+= form_for @store, url: add_stuff_store_path, html: {class: 'store-edit-form'} do |f|
+	= f.fields_for :stuffs do |ff|
+		= render partial: 'stuff', locals: {f: ff}
+
+	.field
+		= link_to_add_fields 'メンバー追加', f, :stuffs do
+	
+	.field
+		= f.submit '設定'
+	

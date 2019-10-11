@@ -1,0 +1,14 @@
+.chat-dlg
+	h2.title チャット
+	.content.hidden
+		#messages.user
+			.right
+				span.msg
+					= @userIndex < 5 ? 'こんにちは！' : '少々お待ち下さい。'
+				
+				/ span.time = Time.zone.now.strftime('%Y/%m/%d %H:%M')
+			= render 'messages'
+		= render 'send_box', toUser: false
+
+#dialog-confirm.dialog title=('')
+	h3 オペレータからのお声がけしてよろしいですか？

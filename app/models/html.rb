@@ -1,0 +1,2 @@
+class Html < ApplicationRecord
+end

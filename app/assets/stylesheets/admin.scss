@@ -1,0 +1,114 @@
+ul.stores {
+	li {
+		display: flex;
+		align-items: center;
+		a:first-child {
+			margin-right: 60px;
+		}
+	}
+}
+ul.stores,
+ul.rooms {
+	li {
+		list-style: none;
+		a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			p:nth-child(1) {
+				width: 110px;
+			}
+			p:nth-child(2) {
+				width: 110px;
+			}
+      p:nth-child(3) {
+        width: 120px;
+      }
+		}
+
+	}
+}
+
+ul.user-list {
+	padding: 0;
+	li {
+		list-style: none;
+		display: flex;
+		a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			p {
+				width: 120px;
+			}
+		}
+	}
+}
+
+.store-show {
+	a {
+		margin-right: 30px;
+	}
+}
+
+
+.admin-messages {
+	width: 600px;
+	margin: auto;
+	overflow-y: scroll;
+
+	.left {
+		text-align: right;
+		padding: 10px;
+		position: relative;
+		.time {
+			right: 10px;
+		}
+	}
+
+	.right {
+		text-align: left;
+		padding: 10px;
+		position: relative;
+		.time {
+			left: 10px;
+		}
+	}
+	
+	a.pay {
+		padding: 6px 20px;
+    background: dimgrey;
+    border-radius: 5px;
+	}
+
+	span.msg {
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 15px;
+	}
+
+	span.time {
+		position: absolute;
+    bottom: -8px;
+    font-size: 14px;
+	}
+}
+
+.site {
+	padding: 20px 0 0 25px;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	
+	.field {
+		padding: 10px 20px;
+	}
+	p {
+		line-height: 25px;
+		padding: 0;
+		margin: 0;
+	}
+}

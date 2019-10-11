@@ -1,0 +1,6 @@
+- @chatRoom.messages.each do |msg|
+	div class=[msg.toUser == true ? 'right' : 'left']
+		- if msg.isPayURL == true
+			= link_to '決済ページへ', msg.message, class: 'pay'
+		- else
+			span.msg = msg.message

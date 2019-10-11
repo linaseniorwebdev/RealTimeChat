@@ -1,0 +1,8 @@
+= form_for :store, url: auth_stores_path, html: {} do |f|
+	.field
+		= f.label :auth_id, 'ID : '
+		= f.text_field :auth_id, require: true
+	.field
+		= f.label :auth_password, 'パスワード'
+		= f.text_field :auth_password, require: true
+	= f.submit 'ログイン'

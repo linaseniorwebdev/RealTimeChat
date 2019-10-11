@@ -1,0 +1,19 @@
+p = "<!doctype html>"
+p = "<html>"
+p = "<head>"
+p = "。。。"
+p.red = "ここに追加します。"
+p = "</head>"
+p = "<body>"
+p = "。。。"
+p = "</body>"
+p = "</html>"
+
+br
+br
+br
+
+
+- lines = Html.first.data.split('*****')
+- lines.each do |line|
+  p = line

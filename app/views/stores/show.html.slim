@@ -1,0 +1,87 @@
+= link_to 'タグを見る', htmltag_stores_path, class: 'htmltag'
+
+.stuff_area
+	- unless current_stuff.nil?
+		span = current_stuff.name
+	= link_to 'ログアウト', logout_store_path, method: :delete
+.store-show
+	.store-edit
+		= link_to '加盟店設定', edit_store_path
+		- if current_stuff.nil?
+			= link_to '担当者設定', stuff_store_path
+	= form_for @store, url: store_path, html: {} do |f|
+		.field
+			= f.check_box :defaultEnable
+			= f.label :defaultEnable, 'ダイアログ初めに表示'
+		
+		.field
+			= f.label :start_time, 'スタート時間'
+			= f.time_select :start_time, {default: {hour: '00', minute: '00'}}
+
+		.field
+			= f.label :end_time, 'エンド時間'
+			= f.time_select :end_time, {default: {hour: '23', minute: '59'}}
+
+		= f.fields_for :items do |ff|
+			= render partial: 'item', locals: {f: ff}
+
+.users-status
+	- visitingUsers = @users.where(site_id: @store.sites.pluck(:id))
+	.flex
+		p 閲覧者
+		span.store-accessing-user-cnt = visitingUsers.count
+		span 人
+	.flex
+		p TOPページ
+		span.store-accessing-top-user-cnt = visitingUsers.count
+		span 人
+	.flex
+		p 商品ページ
+		span.store-accessing-item-user-cnt 0
+		span 人
+
+.users
+	.flex
+		p.title ユーザーリスト
+		= form_for :param, url: store_path(@store), html: {id: 'site_filter', method: :get} do |f|
+			= f.select :site_id, options_for_select(@store.sites.pluck(:name, :id), @site.nil? ? '全体' : [@site.name, @site.id]), {include_blank: '全体'}, {onchange: "$('#site_filter').submit();"}
+	ul.user-list
+		li
+			a
+				p ユーザーID
+				p 状態
+				p サイト
+				p 経過時間
+				p 閲覧中ページ
+				p 最後発言
+				p 訪問回数
+				p 閲覧ページ数
+				p チャット回数
+				p HP滞在時間
+				p 担当者
+				p
+		- @chatRooms.each_with_index do |room, i|
+			- unless @site.nil?
+				- next if @site.id != room.site.id 
+			- user = User.find(room.user_id)
+			- next unless @store.site_ids.include?(user.site_id)
+			- msgCnt = room.messages.count
+			- isPayURL = msgCnt > 0 ? room.messages.last.isPayURL : false
+			li
+				= link_to message_store_path(chat_room_id: room.id) do
+					p = "User #{user.id}"
+					p = room.messages.where(toUser: true).count > 0 ? "対応中" : '未対応'
+					p = room.site.name
+					p 
+						- if msgCnt > 0
+							= distance_of_time_in_words(Time.zone.now - room.messages.last.created_at)
+					p TOPページ
+					p
+						- if msgCnt > 0
+							= isPayURL == true ? '決済ページ' : room.messages.last.message
+					p = room.visit_count
+					p = History.where(user_id: user.id, site_id: room.site_id).count
+					p = msgCnt
+					p = distance_of_time_in_words(Time.zone.now - user.store_enter_time)
+					p = room.stuff.nil? ? '＿ ＿ ＿' : room.stuff.name
+				= link_to '削除', delete_user_store_path(user_id: user.id), method: :post

@@ -1,0 +1,20 @@
+= link_to 'タグを見る', htmltag_stores_path, class: 'htmltag'
+
+ul.stores
+  li
+    a
+      p 加盟店番号
+      p 加盟店ID
+      p 名前
+      p 決済件
+      p 
+  - @stores.each_with_index do |store, i|
+    li
+      = link_to admin_path(id: store.id) do
+        p = store.id
+        p = store.auth_id
+        p = store.name
+        p = "#{store.get_pays}件"
+      = link_to '削除', admin_path(id: store.id), method: :delete, data: { confirm: '削除する' }
+
+= link_to '加盟店登録', new_admin_path

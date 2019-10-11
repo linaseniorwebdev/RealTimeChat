@@ -1,0 +1,8 @@
+.send-box
+	= form_for :message, url: send_msg_store_path, remote: true, authenticity_token: true, html: {} do |f|
+		.msg-field
+			= f.hidden_field :isPayURL, value: 0
+			= f.hidden_field :chat_room_id, value: @chatRoom.id
+			= f.hidden_field :toUser, value: toUser
+			= f.text_area :message, placeholder: 'こちらで入力', rows: 2, required: true
+			= f.submit '送信', data: {send: "message"}

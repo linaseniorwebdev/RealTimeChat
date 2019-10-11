@@ -1,0 +1,223 @@
+Started GET "/" for 127.0.0.1 at 2019-10-09 15:54:08 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AdminsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-09 15:54:09 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 5381ms (Views: 5367.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-10-09 15:54:16 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-09 15:54:16 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2019-10-09 16:02:15 +0900
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-09 16:02:15 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-09 16:02:15 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (81.4ms)
+Completed 200 OK in 1169ms (Views: 1154.6ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-09 16:02:17 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-09 16:02:17 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-09 16:02:17 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 01:10:25 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:10:25 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-10 01:10:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 1248ms (Views: 1226.6ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:10:30 +0900
+UsersChannel stopped streaming from users
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 01:12:03 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:12:03 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2019-10-10 01:12:06 +0900
+Processing by AdminsController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-10 01:12:06 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 1148ms (Views: 1136.3ms | ActiveRecord: 1.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:12:07 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 01:12:07 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:12:07 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 01:15:36 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:15:36 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2019-10-10 01:15:36 +0900
+Processing by AdminsController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-10 01:15:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 1246ms (Views: 1238.3ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:15:38 +0900
+UsersChannel stopped streaming from users
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 01:15:38 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 01:15:38 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2019-10-10 18:39:38 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AdminsController#index as HTML
+Completed 401 Unauthorized in 45ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-10 18:39:39 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 1414ms (Views: 1402.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 18:39:42 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 18:39:42 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 18:41:42 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 18:41:42 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-10 18:41:42 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (70.6ms)
+Completed 200 OK in 1141ms (Views: 1122.5ms | ActiveRecord: 0.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 18:41:43 +0900
+UsersChannel stopped streaming from users
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 18:41:44 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 18:41:44 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2019-10-10 20:48:18 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AdminsController#index as HTML
+Completed 401 Unauthorized in 77ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-10 20:48:21 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (214.3ms)
+Completed 200 OK in 2107ms (Views: 2046.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-10-10 20:48:24 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-10 20:48:24 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/" for 127.0.0.1 at 2019-10-11 18:48:55 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AdminsController#index as HTML
+Completed 401 Unauthorized in 41ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-11 18:48:55 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (75.2ms)
+Completed 200 OK in 1811ms (Views: 1794.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-10-11 18:48:59 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-11 18:49:00 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/admin_users/sign_up" for 127.0.0.1 at 2019-10-11 18:55:53 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 406ms (Views: 399.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-10-11 18:56:02 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-11 18:56:02 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+Started GET "/admin_users/sign_in" for 127.0.0.1 at 2019-10-11 19:11:21 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (104.6ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "mobile.png" is not present in the asset pipeline.):
+    2:   <div class="row">
+    3:     <div class="login pull-left">
+    4:       <div class="mobile">
+    5:         <%= image_tag('mobile.png') %>
+    6:         <h2>Heading out?<br/> Stay connected</h2>
+    7:         <p>Visit <strong>daily smarty</strong> on your mobile phone.</p>
+    8:       </div>
+  
+app/views/devise/sessions/new.html.erb:5:in `_app_views_devise_sessions_new_html_erb__466888386_131938340'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-11 19:11:23 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users

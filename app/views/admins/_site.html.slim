@@ -1,0 +1,19 @@
+.site
+	div
+		.field
+			= f.label :uid, 'サイトID'
+			= f.text_field :uid, required: true
+		.field
+			= f.label :name, 'サイト名'
+			= f.text_field :name, required: true
+		.field
+			= f.label :password, 'パスワード'
+			= f.text_field :password, required: true
+		.field
+			= f.label :url, 'URL'
+			= f.text_field :url, required: true, class: 'url'
+	.field.remove-btn
+		- unless f.object.name.nil?
+			= link_to '削除', delete_site_admin_path(id: @store.id, site_id: f.object.id), method: :delete
+		- else
+			= link_to '削除', edit_admin_path(@store), class: 'remove_btn_admin_site'

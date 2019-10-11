@@ -1,0 +1,43 @@
+.store-show
+	= link_to '加盟店リストへ', admins_path
+	= link_to '編集する', edit_admin_path(@store)
+
+	.flex
+		.field
+			p ID
+			p = @store.auth_id
+		.field
+			p パスワード
+			p = @store.auth_password
+		.field
+			p 名前
+			p = @store.name
+
+	h3 サイトリスト
+	- @store.sites.each do |site|
+		.flex
+			.field
+				p ID
+				p = site.uid
+			.field
+				p サイト名
+				p = site.name
+			.field
+				p URL
+				p = site.url
+
+p チャットリスト
+ul.rooms
+	li
+		a
+			p NO
+			p サイト名
+			p メッセージ件
+			p 決済件
+	- @store.sites.each_with_index do |site, i|
+		li
+			= link_to site_admin_path(@store, site_id: site.id)
+				p = i + 1
+				p = site.name
+				p = site.chat_rooms.count
+				p = site.get_pays

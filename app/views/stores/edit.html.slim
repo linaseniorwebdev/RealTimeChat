@@ -1,0 +1,24 @@
+= link_to '加盟店へ', store_path(id: @store.id)
+
+= form_for @store, url: store_path, html: {class: 'store-edit-form'} do |f|
+	.field
+		= f.check_box :defaultEnable
+		= f.label :defaultEnable, 'ダイアログ初めに表示'
+	
+	.field
+		= f.label :start_time, 'スタート時間'
+		= f.time_select :start_time, {default: {hour: '00', minute: '00'}}
+
+	.field
+		= f.label :end_time, 'エンド時間'
+		= f.time_select :end_time, {default: {hour: '23', minute: '59'}}
+
+	= f.fields_for :items do |ff|
+		= render partial: 'item', locals: {f: ff}
+
+	.field
+		= link_to_add_fields '商品追加', f, :items do
+	
+	.field
+		= f.submit '設定'
+	

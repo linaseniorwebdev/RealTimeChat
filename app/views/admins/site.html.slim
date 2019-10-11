@@ -1,0 +1,13 @@
+= link_to '戻る', admin_path(@site.store)
+ul.rooms
+	li
+		a
+			p NO
+			p メッセージ件
+			p 決済件
+	- @site.chat_rooms.each_with_index do |room, i|
+		li
+			= link_to chatroom_admin_path(@site.store, chat_room_id: room.id)
+				p = i + 1
+				p = room.messages.count
+				p = room.get_pays
