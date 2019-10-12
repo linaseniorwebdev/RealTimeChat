@@ -1,0 +1,45 @@
+<head>
+	<meta content="text/html" charset="UTF-8" http-equiv="Content-Type">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>パスワードのリセット | チャット</title>
+	<%= stylesheet_link_tag "/assets/josh/bootstrap.min" %>
+	<%= stylesheet_link_tag "/assets/josh/pages/login" %>
+</head>
+
+<body>
+<div class="container">
+	<div class="row vertical-offset-100">
+		<div class="col-sm-6 col-sm-offset-3  col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4">
+			<div id="container_demo">
+				<div id="wrapper">
+					<div id="forgot" class="animate form">
+						<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+							<h3 class="black_bg">
+							<%= image_tag("/assets/josh/logo.png") %>
+							<br>FORGOT PASSWORD</h3>
+							<p>Enter your email address below and we'll send a special reset password link to your inbox.</p>
+							<div class="form-group">
+								<label style="margin-bottom:0;" for="admin_user_email" class="youmai">
+									<i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc" data-hc="#3c8dbc"></i> Your email
+								</label>
+								<input autofocus="autofocus" autocomplete="email" type="email" value="" name="admin_user[email]" id="admin_user_email" placeholder="Email Address">
+							</div>
+							<p class="login button reset_button">
+								<input type="submit" name="commit" value="Reset Password" data-disable-with="Send me reset password instructions" class="btn btn-raised btn-success btn-block">
+							</p>
+							<p class="change_link">
+								<a href="/admin_users/sign_in" class="btn btn-responsive botton-alignment btn-primary btn-sm">Log in</a>
+								<a href="/admin_users/sign_up" id="signup" class="btn btn-responsive botton-alignment btn-success btn-sm pull-right">Sign Up
+								</a>
+							</p>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= javascript_include_tag "/assets/josh/app" %>
+</body>
+
