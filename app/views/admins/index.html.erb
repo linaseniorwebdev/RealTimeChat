@@ -1,7 +1,7 @@
 <head>
 	<meta content="text/html" charset="UTF-8" http-equiv="Content-Type">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>管理者リスト | チャット</title>
+	<title>加盟店リスト | チャット</title>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 	<%= stylesheet_link_tag "/assets/josh/app" %>
 	<%= stylesheet_link_tag "/assets/josh/pages/tables" %>
@@ -44,7 +44,6 @@
 						<li>
 							<a href="adduser.html"> <i class="livicon" data-name="gears" data-s="18"></i> Account Settings </a>
 						</li>
-						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
 								<a href="lockscreen.html"> <i class="livicon" data-name="lock" data-s="18"></i> Lock </a>
@@ -65,29 +64,23 @@
 			<div class="page-sidebar  sidebar-nav">
 				<ul class="page-sidebar-menu" id="menu">
 					<li>
-						<a href="index.html">
+						<a href="/">
 							<i class="livicon" data-name="home" data-size="18" data-c="#418BCA" data-hc="#418BCA" data-loop="true"></i>
-							<span class="title">Dashboard</span>
+							<span class="title">ダッシュボード</span>
 						</a>
 					</li>
 					<li class="active">
 						<a href="#">
 							<i class="livicon" data-name="users" data-size="18" data-c="#00bc8c" data-hc="#00bc8c" data-loop="true"></i>
-							<span class="title">管理者</span>
+							<span class="title">加盟店</span>
 							<span class="fa arrow"></span>
 						</a>
 						<ul class="sub-menu">
 							<li class="active">
-								<a href="/admins"><i class="fa fa-angle-double-right"></i> 管理者リスト</a>
+								<a href="/admins"><i class="fa fa-angle-double-right"></i> 加盟店リスト</a>
 							</li>
 							<li>
-								<a href="adduser.html"><i class="fa fa-angle-double-right"></i> Add New User</a>
-							</li>
-							<li>
-								<a href="view_user.html"><i class="fa fa-angle-double-right"></i> View Profile</a>
-							</li>
-							<li>
-								<a href="deleted_users.html"><i class="fa fa-angle-double-right"></i> Deleted Users</a>
+								<a href="/admins/new"><i class="fa fa-angle-double-right"></i> 加盟店登録</a>
 							</li>
 						</ul>
 					</li>
@@ -97,7 +90,7 @@
 	</aside>
 	<aside class="right-side">
 		<section class="content-header">
-			<h1>Simple Tables</h1>
+			<h1>加盟店リスト</h1>
 		</section>
 		<section class="content" style="padding: 15px;">
 			<div style="text-align: right;">

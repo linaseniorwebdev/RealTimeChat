@@ -1,4 +1,81 @@
-= link_to '加盟店へ', admin_path(id: params[:id].to_i)
-
-.admin-messages
-	= render 'stores/messages'
+head
+	meta charset="UTF-8" content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+	meta content="width=device-width, initial-scale=1.0" name="viewport" /
+	title チャットルーム | チャット
+	link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet" /
+	= stylesheet_link_tag "/assets/josh/app"
+	= stylesheet_link_tag "/assets/josh/pages/tables"
+body.skin-josh
+	header.header
+		a.logo href="index.html"
+			= image_tag("/assets/josh/logo.png")
+		nav.navbar.navbar-static-top role="navigation"
+			div
+				a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+					.responsive_nav
+			.navbar-right
+				ul.nav.navbar-nav
+					li.dropdown.user.user-menu
+						a.dropdown-toggle data-toggle="dropdown" href="#"
+							= image_tag '/assets/josh/authors/avatar3.jpg', class: 'img-circle img-responsive pull-left', alt: 'riot', width: 35, height: 35
+							.riot
+								div
+									| Riot
+									span
+										i.caret
+						ul.dropdown-menu
+							li.user-header.bg-light-blue
+								= image_tag '/assets/josh/authors/avatar3.jpg', class: 'img-circle img-responsive', width: 90, height: 90, alt: 'User Image'
+								p.topprofiletext Riot Zeast
+							li
+								a href="view_user.html"
+									i.livicon data-name="user" data-s="18"
+									| My Profile
+							li role="presentation"
+							li
+								a href="adduser.html"
+									i.livicon data-name="gears" data-s="18"
+									| Account Settings
+							li.user-footer
+								.pull-left
+									a href="lockscreen.html"
+										i.livicon data-name="lock" data-s="18"
+										| Lock
+								.pull-right
+									a href="login.html"
+										i.livicon data-name="sign-out" data-s="18"
+										| Logout
+	.wrapper.row-offcanvas.row-offcanvas-left
+		aside.left-side.sidebar-offcanvas
+			section.sidebar
+				.page-sidebar.sidebar-nav
+					ul#menu.page-sidebar-menu
+						li
+							a href="/"
+								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
+								span.title ダッシュボード
+						li.active
+							a href="#"
+								i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+								span.title 加盟店
+								span.fa.arrow
+							ul.sub-menu
+								li
+									a href="/admins"
+										i.fa.fa-angle-double-right
+										| 加盟店リスト
+								li
+									a href="/admins/new"
+										i.fa.fa-angle-double-right
+										| 加盟店登録
+		aside.right-side
+			section.content-header
+				h1 チャットルーム
+			section.content style=("padding: 15px;")
+				article style=("text-align: right; margin-bottom: 10px;")
+					= link_to '加盟店へ', admin_path(id: params[:id].to_i), class: "btn btn-primary"
+				article
+					= render 'stores/messages'
+	a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+		i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"
+	= javascript_include_tag "/assets/josh/app"

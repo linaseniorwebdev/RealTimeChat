@@ -36,7 +36,6 @@ Responsive & Scrollable Tables
     overflow-x: auto;
     overflow-y: hidden;
     border: 1px solid #dddddd;
-    margin: 10px 0 !important;
 }
 
 .table-scrollable > .table {
