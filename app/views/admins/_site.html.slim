@@ -1,29 +1,19 @@
-.panel.panel-primary
-	.panel-heading
-		h3.panel-title
-			i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="share" data-size="16"
-		span.pull-right
-			i.glyphicon.glyphicon-chevron-up.clickable
-	.panel-body
-		fieldset
-			.form-group
-				= f.label :uid, 'サイトID', class: "col-md-3 control-label"
-				.col-md-9
-					= f.text_field :uid, required: true, class: "form-control"
-			.form-group
-				= f.label :name, 'サイト名', class: "col-md-3 control-label"
-				.col-md-9
-					= f.text_field :name, required: true, class: "form-control"
-			.form-group
-				= f.label :password, 'パスワード', class: "col-md-3 control-label"
-				.col-md-9
-					= f.password_field :password, required: true, class: "form-control"
-			.form-group
-				= f.label :url, 'URL', class: "col-md-3 control-label"
-				.col-md-9
-					= f.text_field :url, required: true, class: 'url', class: "form-control"
-			.field.remove-btn style=("text-align: right;")
-				- unless f.object.name.nil?
-					= link_to '削除', delete_site_admin_path(id: @store.id, site_id: f.object.id), method: :delete, class: "btn btn-danger"
-				- else
-					= link_to '削除', edit_admin_path(@store), class: 'remove_btn_admin_site', class: "btn btn-danger"
+.site
+	div
+		.field
+			= f.label :uid, 'サイトID'
+			= f.text_field :uid, required: true
+		.field
+			= f.label :name, 'サイト名'
+			= f.text_field :name, required: true
+		.field
+			= f.label :password, 'パスワード'
+			= f.text_field :password, required: true
+		.field
+			= f.label :url, 'URL'
+			= f.text_field :url, required: true, class: 'url'
+	.field.remove-btn
+		- unless f.object.name.nil?
+			= link_to '削除', delete_site_admin_path(id: @store.id, site_id: f.object.id), method: :delete
+		- else
+			= link_to '削除', edit_admin_path(@store), class: 'remove_btn_admin_site'
