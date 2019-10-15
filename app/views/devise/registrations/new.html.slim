@@ -1,0 +1,39 @@
+css:
+	.login-box {
+		max-width: 500px;
+		margin: 0 auto;
+		padding: 50px 15px 15px;
+	}
+
+	@media (min-width: 768px) {
+		.login-box {
+			padding-top: 200px;
+		}
+	}
+.login-box
+	.panel.panel-primary
+		.panel-heading
+			h3.panel-title Sign Up
+			span.pull-right
+				i.glyphicon.glyphicon-chevron-up.clickable
+		.panel-body
+			= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"}) do |f|
+				fieldset
+					.form-group
+						label.col-md-3.control-label for="admin_user_email" E-mail
+						.col-md-9
+							input#admin_user_email.form-control name="admin_user[email]" placeholder=("E-mail") type="email" /
+					.form-group
+						label.col-md-3.control-label for="password" Password
+						.col-md-9
+							input#password.form-control name="admin_user[password]" placeholder=("Password") type="password" /
+					.form-group
+						label.col-md-3.control-label for="password_confirmation" Password
+						.col-md-9
+							input#password_confirmation.form-control name="admin_user[password_confirmation]" placeholder=("Password") type="password" /
+					.form-group
+						.col-md-12.text-center
+							input.btn.btn-responsive.btn-primary data-disable-with=("Log in") name="commit" type="submit" value=("Sign Up") /
+					.form-group style=("margin-bottom: 0;")
+						.col-md-12
+							a.btn.btn-responsive.botton-alignment.btn-success.pull-right href="/admin_users/sign_in" Log In

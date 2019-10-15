@@ -1,15 +1,15 @@
 doctype html
 html
-  head
-    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
-    meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" /
-    title チャット
-    = csrf_meta_tags
-    = csp_meta_tag
-
-    = stylesheet_link_tag    'application', media: 'all'
-    = include_gon
-    = javascript_include_tag 'application'
-    = action_cable_meta_tag
-  body
-    = yield
+	head
+		meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+		meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" /
+		title チャット
+		= csrf_meta_tags
+		= csp_meta_tag
+		= include_gon
+		= javascript_include_tag 'application'
+		= action_cable_meta_tag
+		= stylesheet_link_tag '/assets/josh/app', media: 'all'
+	body
+		= yield
+		= javascript_include_tag '/assets/josh/app'
