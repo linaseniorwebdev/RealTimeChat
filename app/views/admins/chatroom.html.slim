@@ -1,4 +1,63 @@
-= link_to '加盟店へ', admin_path(id: params[:id].to_i)
-
-.admin-messages
-	= render 'stores/messages'
+header.header
+	a.logo href="#"
+		= image_tag "/assets/josh/logo.png"
+	nav.navbar.navbar-static-top role="navigation"
+		div
+			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+				.responsive_nav
+.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			.page-sidebar.sidebar-nav
+				.nav_icons(style="padding-left: 12px;")
+					ul.sidebar_threeicons
+						li
+							a href="#"
+								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="table" data-size="25" title=("Advanced tables")
+						li
+							a href="#"
+								i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="list-ul" data-size="25" title="Tasks"
+						li
+							a href="#"
+								i.livicon data-c="#F89A14" data-hc="#F89A14" data-loop="true" data-name="image" data-size="25" title="Gallery"
+						li
+							a href="#"
+								i.livicon data-c="#01bc8c" data-hc="#01bc8c" data-loop="true" data-name="users" data-size="25" title=("Users List")
+				.clearfix
+				ul#menu.page-sidebar-menu
+					li
+						a href="#"
+							i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
+							span.title ダッシュボード
+					li.active
+						a href="#"
+							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+							span.title 加盟店
+							span.fa.arrow
+						ul.sub-menu
+							li
+								a href="/admins"
+									i.fa.fa-angle-double-right
+									| 加盟店リスト
+							li
+								a href="/admins/new"
+									i.fa.fa-angle-double-right
+									| 加盟店登録
+	aside.right-side
+		section.content-header
+			h1 チャットルーム
+			ol.breadcrumb
+				li
+					a href="#"
+						i.livicon data-color="#000" data-name="home" data-size="14"
+						| ホーム
+				li
+					a href="#"  加盟店
+				li.active チャットルーム
+		section.content.padding-15
+			article.text-right(style="margin-bottom: 15px;")
+				= link_to '加盟店へ', admin_path(id: params[:id].to_i), class: 'btn btn-primary'
+			article
+				= render 'stores/messages'
+a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"
