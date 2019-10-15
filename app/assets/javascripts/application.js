@@ -13,10 +13,8 @@
 
 //= require jquery
 //= require jquery-ui
-//= require jquery.turbolinks
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 
 //= require cable
 //= require_tree ./channels

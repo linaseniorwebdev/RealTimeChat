@@ -6,7 +6,7 @@ module ApplicationHelper
 		onclick = "#{"#{html_options[:onclick]}; " if html_options[:onclick]}#{function}; return false;"
 		href = html_options[:href] || '#'
 
-		content_tag(:a, name, html_options.merge(:href => href, :onclick => onclick))
+		content_tag(:a, name, html_options.merge(:href => href, :onclick => onclick, :class => "btn btn-sm btn-primary"))
 	end
 	def link_to_add_fields(name, f, association) 
 		#new_object = f.object.class.reflect_on_association(association).klass.new

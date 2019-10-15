@@ -1,13 +1,114 @@
-= link_to '戻る', admin_path(@site.store)
-ul.rooms
-	li
-		a
-			p NO
-			p メッセージ件
-			p 決済件
-	- @site.chat_rooms.each_with_index do |room, i|
-		li
-			= link_to chatroom_admin_path(@site.store, chat_room_id: room.id)
-				p = i + 1
-				p = room.messages.count
-				p = room.get_pays
+header.header
+	a.logo href="#"
+		= image_tag "/assets/josh/logo.png"
+	nav.navbar.navbar-static-top role="navigation"
+		div
+			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+				.responsive_nav
+		.navbar-right
+			ul.nav.navbar-nav
+				li.dropdown.user.user-menu
+					a.dropdown-toggle data-toggle="dropdown" href="#"
+						= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive pull-left", :width => 35, :height => 35
+						.riot
+							div
+								| Riot
+								span
+									i.caret
+					ul.dropdown-menu
+						li.user-header.bg-light-blue
+							= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive", :width => 90, :height => 90
+							p.topprofiletext Riot Zeast
+						li
+							a href="#"
+								i.livicon data-name="user" data-s="18"
+								| My Profile
+						li role="presentation"
+						li
+							a href="#"
+								i.livicon data-name="gears" data-s="18"
+								| Account Settings
+						li.user-footer
+							.pull-left
+								a href="#"
+									i.livicon data-name="lock" data-s="18"
+									| Lock
+							.pull-right
+								a href="#"
+									i.livicon data-name="sign-out" data-s="18"
+									| Logout
+.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			.page-sidebar.sidebar-nav
+				.nav_icons(style="padding-left: 12px;")
+					ul.sidebar_threeicons
+						li
+							a href="#"
+								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="table" data-size="25" title=("Advanced tables")
+						li
+							a href="#"
+								i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="list-ul" data-size="25" title="Tasks"
+						li
+							a href="#"
+								i.livicon data-c="#F89A14" data-hc="#F89A14" data-loop="true" data-name="image" data-size="25" title="Gallery"
+						li
+							a href="#"
+								i.livicon data-c="#01bc8c" data-hc="#01bc8c" data-loop="true" data-name="users" data-size="25" title=("Users List")
+				.clearfix
+				ul#menu.page-sidebar-menu
+					li
+						a href="#"
+							i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
+							span.title ダッシュボード
+					li.active
+						a href="#"
+							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+							span.title 加盟店
+							span.fa.arrow
+						ul.sub-menu
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| 加盟店リスト
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| 加盟店登録
+	aside.right-side
+		section.content-header
+			h1 サイト情報
+			ol.breadcrumb
+				li
+					a href="#"
+						i.livicon data-color="#000" data-name="home" data-size="14"
+						| ホーム
+				li
+					a href="#"  加盟店
+				li.active サイト情報
+		section.content.padding-15
+			article.text-right(style="margin-bottom: 15px;")
+				= link_to '戻る', admin_path(@site.store), class: 'btn btn-primary'
+			.panel.panel-primary
+				.panel-heading
+					h4.panel-title サイト情報
+					span.pull-right
+						i.glyphicon.glyphicon-chevron-up.clickable
+				.panel-body
+					table.table.table-hover
+						thead
+							tr
+								th NO
+								th メッセージ件
+								th 決済件
+								th アクション
+						tbody
+							- @site.chat_rooms.each_with_index do |room, i|
+								tr
+									td = i + 1
+									td = room.messages.count
+									td = room.get_pays
+									td
+										= link_to chatroom_admin_path(@site.store, chat_room_id: room.id), class: "btn btn-sm btn-success"
+a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"

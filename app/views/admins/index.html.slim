@@ -1,20 +1,118 @@
-= link_to 'タグを見る', htmltag_stores_path, class: 'htmltag'
-
-ul.stores
-  li
-    a
-      p 加盟店番号
-      p 加盟店ID
-      p 名前
-      p 決済件
-      p 
-  - @stores.each_with_index do |store, i|
-    li
-      = link_to admin_path(id: store.id) do
-        p = store.id
-        p = store.auth_id
-        p = store.name
-        p = "#{store.get_pays}件"
-      = link_to '削除', admin_path(id: store.id), method: :delete, data: { confirm: '削除する' }
-
-= link_to '加盟店登録', new_admin_path
+header.header
+	a.logo href="#"
+		= image_tag "/assets/josh/logo.png"
+	nav.navbar.navbar-static-top role="navigation"
+		div
+			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+				.responsive_nav
+		.navbar-right
+			ul.nav.navbar-nav
+				li.dropdown.user.user-menu
+					a.dropdown-toggle data-toggle="dropdown" href="#"
+						= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive pull-left", :width => 35, :height => 35
+						.riot
+							div
+								| Riot
+								span
+									i.caret
+					ul.dropdown-menu
+						li.user-header.bg-light-blue
+							= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive", :width => 90, :height => 90
+							p.topprofiletext Riot Zeast
+						li
+							a href="#"
+								i.livicon data-name="user" data-s="18"
+								| My Profile
+						li role="presentation"
+						li
+							a href="#"
+								i.livicon data-name="gears" data-s="18"
+								| Account Settings
+						li.user-footer
+							.pull-left
+								a href="#"
+									i.livicon data-name="lock" data-s="18"
+									| Lock
+							.pull-right
+								a href="#"
+									i.livicon data-name="sign-out" data-s="18"
+									| Logout
+.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			.page-sidebar.sidebar-nav
+				.nav_icons(style="padding-left: 12px;")
+					ul.sidebar_threeicons
+						li
+							a href="#"
+								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="table" data-size="25" title=("Advanced tables")
+						li
+							a href="#"
+								i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="list-ul" data-size="25" title="Tasks"
+						li
+							a href="#"
+								i.livicon data-c="#F89A14" data-hc="#F89A14" data-loop="true" data-name="image" data-size="25" title="Gallery"
+						li
+							a href="#"
+								i.livicon data-c="#01bc8c" data-hc="#01bc8c" data-loop="true" data-name="users" data-size="25" title=("Users List")
+				.clearfix
+				ul#menu.page-sidebar-menu
+					li
+						a href="#"
+							i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
+							span.title ダッシュボード
+					li.active
+						a href="#"
+							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+							span.title 加盟店
+							span.fa.arrow
+						ul.sub-menu
+							li#active.active
+								a href="#"
+									i.fa.fa-angle-double-right
+									| 加盟店リスト
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| 加盟店登録
+	aside.right-side
+		section.content-header
+			h1 加盟店リスト
+			ol.breadcrumb
+				li
+					a href="#"
+						i.livicon data-color="#000" data-name="home" data-size="14"
+						| ホーム
+				li
+					a href="#"  加盟店
+				li.active 加盟店リスト
+		section.content.padding-15
+			article.text-right(style="margin-bottom: 15px;")
+				= link_to 'タグを見る', htmltag_stores_path, class: 'btn btn-primary'
+				= link_to '加盟店登録', new_admin_path, class: 'btn btn-success', style: "margin-left: 10px;"
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title 加盟店リスト
+					span.pull-right
+						i.glyphicon.glyphicon-chevron-up.clickable
+				.panel-body
+					table.table.table-hover
+						thead
+							tr
+								th 加盟店番号
+								th 加盟店ID
+								th 名前
+								th 決済件
+								th アクション
+						tbody
+							- @stores.each_with_index do |store, i|
+								tr
+									td = store.id
+									td = store.auth_id
+									td = store.name
+									td = "#{store.get_pays}件"
+									td
+										= link_to "詳細", admin_path(id: store.id), class: "btn btn-sm btn-success"
+										= link_to "削除", admin_path(id: store.id), method: :delete, data: {confirm: "削除する"}, class: "btn btn-sm btn-danger", style: "margin-left: 10px;"
+a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"
