@@ -1,17 +1,17 @@
-.store_item
-	.flex
-		.field
-			.field
-				= f.label :name, '名前'
-				= f.text_field :name, required: true
-			.field
-				= f.label :url, 'URL'
-				= f.text_field :url, required: true, class: 'url'
-			.field
-				= f.label :site_id, 'サイト名'
-				= f.select :site_id, options_for_select(@store.sites.pluck(:name, :id), f.object.site_id), {}, {}
-		.field.remove-btn
-			- unless f.object.name.nil?
-				= link_to '商品削除', delete_item_store_path(item_id: f.object.id), method: :delete
-			- else
-				= link_to '削除', edit_store_path, class: 'remove_btn_store_item'
+.form-group
+	= f.label :name, '名前', class: "col-md-3 control-label"
+	.col-md-9
+		= f.text_field :name, required: true, class: "form-control"
+.form-group
+	= f.label :url, 'URL', class: "col-md-3 control-label"
+	.col-md-9
+		= f.text_field :url, required: true, class: 'url', class: "form-control"
+.form-group
+	= f.label :site_id, 'サイト名', class: "col-md-3 control-label"
+	.col-md-9
+		= f.select :site_id, options_for_select(@store.sites.pluck(:name, :id), f.object.site_id), {}, {class: "form-control"}
+.form-group.text-center
+	- unless f.object.name.nil?
+		= link_to '商品削除', delete_item_store_path(item_id: f.object.id), method: :delete, class: "btn btn-sm btn-danger"
+	- else
+		= link_to '削除', edit_store_path, class: 'remove_btn_store_item', class: "btn btn-sm btn-danger"

@@ -1,17 +1,17 @@
-.stuff_item
-	.flex
-		.flex
-			.field
-				= f.label :uid, 'ID'
-				= f.text_field :uid, required: true
-			.field
-				= f.label :name, '名前'
-				= f.text_field :name, required: true
-			.field
-				= f.label :password, 'パスワード'
-				= f.text_field :password, required: true
-		.field.remove-btn
-			- unless f.object.name.nil?
-				= link_to '削除', delete_stuff_store_path(stuff_id: f.object.id), method: :delete
-			- else
-				= link_to '削除', stuff_store_path, class: 'remove_btn_store_stuff'
+.form-group
+	= f.label :uid, 'ID', class: "col-md-3 control-label"
+	.col-md-9
+		= f.text_field :uid, required: true, class: "form-control"
+.form-group
+	= f.label :name, '名前', class: "col-md-3 control-label"
+	.col-md-9
+		= f.text_field :name, required: true, class: "form-control"
+.form-group
+	= f.label :password, 'パスワード', class: "col-md-3 control-label"
+	.col-md-9
+		= f.password_field :password, required: true, class: "form-control"
+.form-group.text-center
+	- unless f.object.name.nil?
+		= link_to '削除', delete_stuff_store_path(stuff_id: f.object.id), method: :delete, class: "btn btn-danger"
+	- else
+		= link_to '削除', stuff_store_path, class: "btn btn-danger"

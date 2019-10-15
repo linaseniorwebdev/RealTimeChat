@@ -1,87 +1,183 @@
-= link_to 'タグを見る', htmltag_stores_path, class: 'htmltag'
-
-.stuff_area
-	- unless current_stuff.nil?
-		span = current_stuff.name
-	= link_to 'ログアウト', logout_store_path, method: :delete
-.store-show
-	.store-edit
-		= link_to '加盟店設定', edit_store_path
-		- if current_stuff.nil?
-			= link_to '担当者設定', stuff_store_path
-	= form_for @store, url: store_path, html: {} do |f|
-		.field
-			= f.check_box :defaultEnable
-			= f.label :defaultEnable, 'ダイアログ初めに表示'
-		
-		.field
-			= f.label :start_time, 'スタート時間'
-			= f.time_select :start_time, {default: {hour: '00', minute: '00'}}
-
-		.field
-			= f.label :end_time, 'エンド時間'
-			= f.time_select :end_time, {default: {hour: '23', minute: '59'}}
-
-		= f.fields_for :items do |ff|
-			= render partial: 'item', locals: {f: ff}
-
-.users-status
-	- visitingUsers = @users.where(site_id: @store.sites.pluck(:id))
-	.flex
-		p 閲覧者
-		span.store-accessing-user-cnt = visitingUsers.count
-		span 人
-	.flex
-		p TOPページ
-		span.store-accessing-top-user-cnt = visitingUsers.count
-		span 人
-	.flex
-		p 商品ページ
-		span.store-accessing-item-user-cnt 0
-		span 人
-
-.users
-	.flex
-		p.title ユーザーリスト
-		= form_for :param, url: store_path(@store), html: {id: 'site_filter', method: :get} do |f|
-			= f.select :site_id, options_for_select(@store.sites.pluck(:name, :id), @site.nil? ? '全体' : [@site.name, @site.id]), {include_blank: '全体'}, {onchange: "$('#site_filter').submit();"}
-	ul.user-list
-		li
-			a
-				p ユーザーID
-				p 状態
-				p サイト
-				p 経過時間
-				p 閲覧中ページ
-				p 最後発言
-				p 訪問回数
-				p 閲覧ページ数
-				p チャット回数
-				p HP滞在時間
-				p 担当者
-				p
-		- @chatRooms.each_with_index do |room, i|
-			- unless @site.nil?
-				- next if @site.id != room.site.id 
-			- user = User.find(room.user_id)
-			- next unless @store.site_ids.include?(user.site_id)
-			- msgCnt = room.messages.count
-			- isPayURL = msgCnt > 0 ? room.messages.last.isPayURL : false
-			li
-				= link_to message_store_path(chat_room_id: room.id) do
-					p = "User #{user.id}"
-					p = room.messages.where(toUser: true).count > 0 ? "対応中" : '未対応'
-					p = room.site.name
-					p 
-						- if msgCnt > 0
-							= distance_of_time_in_words(Time.zone.now - room.messages.last.created_at)
-					p TOPページ
-					p
-						- if msgCnt > 0
-							= isPayURL == true ? '決済ページ' : room.messages.last.message
-					p = room.visit_count
-					p = History.where(user_id: user.id, site_id: room.site_id).count
-					p = msgCnt
-					p = distance_of_time_in_words(Time.zone.now - user.store_enter_time)
-					p = room.stuff.nil? ? '＿ ＿ ＿' : room.stuff.name
-				= link_to '削除', delete_user_store_path(user_id: user.id), method: :post
+css:
+	select.form-control {
+		display: initial !important;
+		width: auto !important;
+	}
+header.header
+	a.logo href="#"
+		= image_tag "/assets/josh/logo.png"
+	nav.navbar.navbar-static-top role="navigation"
+		div
+			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+				.responsive_nav
+		.navbar-right
+			ul.nav.navbar-nav
+				li.dropdown.user.user-menu
+					a.dropdown-toggle data-toggle="dropdown" href="#"
+						= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive pull-left", :width => 35, :height => 35
+						.riot
+							div
+								- unless current_stuff.nil?
+									= current_stuff.name
+								span
+									i.caret
+					ul.dropdown-menu
+						li.user-header.bg-light-blue
+							= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive", :width => 90, :height => 90
+							p.topprofiletext
+								- unless current_stuff.nil?
+									= current_stuff.name
+						li.user-footer
+							.pull-left
+								a href="#"
+									| ロック
+							.pull-right
+								= link_to 'ログアウト', logout_store_path, method: :delete
+.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			.page-sidebar.sidebar-nav
+				.nav_icons(style="padding-left: 12px;")
+					ul.sidebar_threeicons
+						li
+							a href="#"
+								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="table" data-size="25" title=("Advanced tables")
+						li
+							a href="#"
+								i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="list-ul" data-size="25" title="Tasks"
+						li
+							a href="#"
+								i.livicon data-c="#F89A14" data-hc="#F89A14" data-loop="true" data-name="image" data-size="25" title="Gallery"
+						li
+							a href="#"
+								i.livicon data-c="#01bc8c" data-hc="#01bc8c" data-loop="true" data-name="users" data-size="25" title=("Users List")
+				.clearfix
+				ul#menu.page-sidebar-menu
+					li
+						a href="#"
+							i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
+							span.title ダッシュボード
+					li.active
+						a href="#"
+							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+							span.title ストアー
+							span.fa.arrow
+						ul.sub-menu
+							li#active.active
+								a href="#"
+									i.fa.fa-angle-double-right
+									| ストアー情報
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| ストアー編集
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| スタッフ
+	aside.right-side
+		section.content-header
+			h1 ストアー情報
+			ol.breadcrumb
+				li
+					a href="#"
+						i.livicon data-color="#000" data-name="home" data-size="14"
+						| ホーム
+				li
+					a href="#"  ストアー
+				li.active ストアー情報
+		section.content.padding-15
+			article.text-right(style="margin-bottom: 15px;")
+				= link_to 'タグを見る', htmltag_stores_path, class: 'btn btn-primary'
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title &nbsp;
+					span.pull-right
+						i.glyphicon.glyphicon-chevron-up.clickable
+				.panel-body
+					.text-right
+						= link_to '加盟店設定', edit_store_path, class: 'btn btn-warning'
+						- if current_stuff.nil?
+							= link_to '担当者設定', stuff_store_path, class: 'btn btn-success', style: "margin-left: 10px;"
+					= form_for @store, url: store_path, html: {class: "form-horizontal"} do |f|
+						fieldset
+							.form-group
+								label.col-md-3.control-label
+								.col-md-9
+									= f.check_box :defaultEnable
+									= f.label :defaultEnable, 'ダイアログ初めに表示'
+							.form-group
+								= f.label :start_time, 'スタート時間', class: "col-md-3 control-label"
+								.col-md-9
+									= f.time_select :start_time, {default: {hour: '00', minute: '00'}}, class: "form-control"
+							.form-group
+								= f.label :end_time, 'エンド時間', class: "col-md-3 control-label"
+								.col-md-9
+									= f.time_select :end_time, {default: {hour: '23', minute: '59'}}, class: "form-control"
+							= f.fields_for :items do |ff|
+								= render partial: 'item', locals: {f: ff}
+			.panel.panel-primary
+				.panel-heading
+					h4.panel-title ユーザーステータス
+					span.pull-right
+						i.glyphicon.glyphicon-chevron-up.clickable
+				.panel-body
+					- visitingUsers = @users.where(site_id: @store.sites.pluck(:id))
+					p = "閲覧者#{visitingUsers.count}人"
+					p = "TOPページ#{visitingUsers.count}人"
+					p = "商品ページ0人"
+			.panel.panel-success
+				.panel-heading
+					h4.panel-title ユーザーリスト
+					span.pull-right
+						i.glyphicon.glyphicon-chevron-up.clickable
+				.panel-body
+					= form_for :param, url: store_path(@store), html: {id: 'site_filter', method: :get, class: "form-horizontal"} do |f|
+						fieldset
+							.form-group(style="margin-left: 0;margin-right: 0;" )
+								label.control-label(style="margin-right: 10px;" ) ユーザーリスト
+								= f.select :site_id, options_for_select(@store.sites.pluck(:name, :id), @site.nil? ? '全体' : [@site.name, @site.id]), {include_blank: '全体'}, {onchange: "$('#site_filter').submit();", class: "form-control"}
+					table.table.table-hover
+						thead
+							tr
+								th ユーザーID
+								th 状態
+								th サイト
+								th 経過時間
+								th 閲覧中ページ
+								th 最後発言
+								th 訪問回数
+								th 閲覧ページ数
+								th チャット回数
+								th HP滞在時間
+								th 担当者
+								th アクション
+						tbody
+							tr
+								- @chatRooms.each_with_index do |room, i|
+									- unless @site.nil?
+										- next if @site.id != room.site.id
+									- user = User.find(room.user_id)
+									- next unless @store.site_ids.include?(user.site_id)
+									- msgCnt = room.messages.count
+									- isPayURL = msgCnt > 0 ? room.messages.last.isPayURL : false
+									td = "User #{user.id}"
+									td = room.messages.where(toUser: true).count > 0 ? "対応中" : '未対応'
+									td = room.site.name
+									td
+										- if msgCnt > 0
+											= distance_of_time_in_words(Time.zone.now - room.messages.last.created_at)
+									td TOPページ
+									td
+										- if msgCnt > 0
+											= isPayURL == true ? '決済ページ' : room.messages.last.message
+									td = room.visit_count
+									td = History.where(user_id: user.id, site_id: room.site_id).count
+									td = msgCnt
+									td = distance_of_time_in_words(Time.zone.now - user.store_enter_time)
+									td = room.stuff.nil? ? '＿ ＿ ＿' : room.stuff.name
+									td
+										= link_to "M", message_store_path(chat_room_id: room.id), class: "btn btn-sm btn-success"
+										= link_to "削除", delete_user_store_path(user_id: user.id), method: :post, class: "btn btn-sm btn-danger"
+a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"

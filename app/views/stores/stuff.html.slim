@@ -1,12 +1,106 @@
-= link_to '加盟店へ', store_path(id: @store.id)
-
-= form_for @store, url: add_stuff_store_path, html: {class: 'store-edit-form'} do |f|
-	= f.fields_for :stuffs do |ff|
-		= render partial: 'stuff', locals: {f: ff}
-
-	.field
-		= link_to_add_fields 'メンバー追加', f, :stuffs do
-	
-	.field
-		= f.submit '設定'
-	
+css:
+	select.form-control {
+		display: initial !important;
+		width: auto !important;
+	}
+header.header
+	a.logo href="#"
+		= image_tag "/assets/josh/logo.png"
+	nav.navbar.navbar-static-top role="navigation"
+		div
+			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+				.responsive_nav
+		.navbar-right
+			ul.nav.navbar-nav
+				li.dropdown.user.user-menu
+					a.dropdown-toggle data-toggle="dropdown" href="#"
+						= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive pull-left", :width => 35, :height => 35
+						.riot
+							div
+								- unless current_stuff.nil?
+									= current_stuff.name
+								span
+									i.caret
+					ul.dropdown-menu
+						li.user-header.bg-light-blue
+							= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive", :width => 90, :height => 90
+							p.topprofiletext
+								- unless current_stuff.nil?
+									= current_stuff.name
+						li.user-footer
+							.pull-left
+								a href="#"
+									| ロック
+							.pull-right
+								= link_to 'ログアウト', logout_store_path, method: :delete
+.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			.page-sidebar.sidebar-nav
+				.nav_icons(style="padding-left: 12px;")
+					ul.sidebar_threeicons
+						li
+							a href="#"
+								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="table" data-size="25" title=("Advanced tables")
+						li
+							a href="#"
+								i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="list-ul" data-size="25" title="Tasks"
+						li
+							a href="#"
+								i.livicon data-c="#F89A14" data-hc="#F89A14" data-loop="true" data-name="image" data-size="25" title="Gallery"
+						li
+							a href="#"
+								i.livicon data-c="#01bc8c" data-hc="#01bc8c" data-loop="true" data-name="users" data-size="25" title=("Users List")
+				.clearfix
+				ul#menu.page-sidebar-menu
+					li
+						a href="#"
+							i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
+							span.title ダッシュボード
+					li.active
+						a href="#"
+							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+							span.title ストアー
+							span.fa.arrow
+						ul.sub-menu
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| ストアー情報
+							li
+								a href="#"
+									i.fa.fa-angle-double-right
+									| ストアー編集
+							li#active.active
+								a href="#"
+									i.fa.fa-angle-double-right
+									| スタッフ
+	aside.right-side
+		section.content-header
+			h1 スタッフ
+			ol.breadcrumb
+				li
+					a href="#"
+						i.livicon data-color="#000" data-name="home" data-size="14"
+						| ホーム
+				li
+					a href="#"  ストアー
+				li.active スタッフ
+		section.content.padding-15
+			article.text-right(style="margin-bottom: 15px;")
+				= link_to '加盟店へ', store_path(id: @store.id), class: 'btn btn-primary'
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title スタッフ
+					span.pull-right
+						i.glyphicon.glyphicon-chevron-up.clickable
+				.panel-body
+					= form_for @store, url: add_stuff_store_path, html: {class: "form-horizontal"} do |f|
+						= f.fields_for :stuffs do |ff|
+							= render partial: 'stuff', locals: {f: ff}
+						.form-group.text-center
+							= link_to_add_fields "メンバー追加", f, :stuffs do
+						.form-group.text-center
+							= f.submit "設定", class: "btn btn-success"
+a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"
