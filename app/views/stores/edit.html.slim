@@ -4,35 +4,10 @@ css:
 		width: auto !important;
 	}
 header.header
-	a.logo href="#"
-		= image_tag "/assets/josh/logo.png"
 	nav.navbar.navbar-static-top role="navigation"
 		div
 			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
 				.responsive_nav
-		.navbar-right
-			ul.nav.navbar-nav
-				li.dropdown.user.user-menu
-					a.dropdown-toggle data-toggle="dropdown" href="#"
-						= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive pull-left", :width => 35, :height => 35
-						.riot
-							div
-								- unless current_stuff.nil?
-									= current_stuff.name
-								span
-									i.caret
-					ul.dropdown-menu
-						li.user-header.bg-light-blue
-							= image_tag "/assets/josh/authors/avatar3.jpg", :class => "img-circle img-responsive", :width => 90, :height => 90
-							p.topprofiletext
-								- unless current_stuff.nil?
-									= current_stuff.name
-						li.user-footer
-							.pull-left
-								a href="#"
-									| ロック
-							.pull-right
-								= link_to 'ログアウト', logout_store_path, method: :delete
 .wrapper.row-offcanvas.row-offcanvas-left
 	aside.left-side.sidebar-offcanvas
 		section.sidebar
@@ -75,6 +50,10 @@ header.header
 								a href="/stores/#{@store.id}/stuff"
 									i.fa.fa-angle-double-right
 									| スタッフ
+					li
+						a data-method="delete" href="/stores/#{@store.id}/logout" rel="nofollow"
+							i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="sign-out" data-size="18"
+							span.title ログアウト
 	aside.right-side
 		section.content-header
 			h1 ストアー編集
