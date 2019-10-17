@@ -75,6 +75,6 @@ header.header
 									td = room.messages.count
 									td = room.get_pays
 									td
-										= link_to chatroom_admin_path(@site.store, chat_room_id: room.id), class: "btn btn-sm btn-success"
+										= link_to "チャットルームへ", chatroom_admin_path(@site.store, chat_room_id: room.id), class: "btn btn-sm btn-success"
 a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
 	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"
