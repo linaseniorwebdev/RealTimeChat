@@ -12,26 +12,7 @@ header.header
 	aside.left-side.sidebar-offcanvas
 		section.sidebar
 			.page-sidebar.sidebar-nav
-				.nav_icons(style="padding-left: 12px;")
-					ul.sidebar_threeicons
-						li
-							a href="#"
-								i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="table" data-size="25" title=("Advanced tables")
-						li
-							a href="#"
-								i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="list-ul" data-size="25" title="Tasks"
-						li
-							a href="#"
-								i.livicon data-c="#F89A14" data-hc="#F89A14" data-loop="true" data-name="image" data-size="25" title="Gallery"
-						li
-							a href="#"
-								i.livicon data-c="#01bc8c" data-hc="#01bc8c" data-loop="true" data-name="users" data-size="25" title=("Users List")
-				.clearfix
 				ul#menu.page-sidebar-menu
-					li
-						a href="#"
-							i.livicon data-c="#418BCA" data-hc="#418BCA" data-loop="true" data-name="home" data-size="18"
-							span.title ダッシュボード
 					li.active
 						a href="#"
 							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
@@ -59,11 +40,7 @@ header.header
 			h1 ストアー編集
 			ol.breadcrumb
 				li
-					a href="#"
-						i.livicon data-color="#000" data-name="home" data-size="14"
-						| ホーム
-				li
-					a href="#"  ストアー
+					= link_to 'ホーム', store_path(id: @store.id)
 				li.active ストアー編集
 		section.content.padding-15
 			article.text-right(style="margin-bottom: 15px;")
