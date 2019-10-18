@@ -3,6 +3,7 @@
 		msgContent = $('.chat-dlg #messages')[0]
 		msgContent.scrollTop = msgContent.scrollHeight
 		$('.msg-field textarea').val('')
+		$("#message_isPayURL").val(false)
 	return
 
 refreshKeyPressed = false
@@ -44,24 +45,8 @@ $(window).bind 'beforeunload', (event) ->
 
 $(document).on 'turbolinks:load',  ->
 	open_msg_dlg = ->
-		$('.chat-dlg').animate {
-			'height': '500px'
-		}, 700
-		setTimeout (->
-			$('.chat-dlg .content').removeClass('hidden')
-			msgContent = $('.chat-dlg #messages')[0]
-			msgContent.scrollTop = msgContent.scrollHeight
-			return
-		), 500
 		return
 	close_msg_dlg = ->
-		$('.chat-dlg').animate {
-			'height': '60px'
-		}, 700
-		setTimeout (->
-			$('.chat-dlg .content').addClass('hidden')
-			return
-		), 200
 		return
 	$('#dialog-confirm').dialog
 		autoOpen: false
@@ -114,4 +99,3 @@ $(document).on 'turbolinks:load',  ->
 		$(this).parent().closest('.store_item').remove()
 		e.preventDefault()
 		return
-

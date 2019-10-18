@@ -136,7 +136,7 @@ header.header
 		section.content.padding-15
 			article.text-right(style="margin-bottom: 15px;")
 				= link_to '加盟店へ', store_path(id: @chatRoom.site.store_id), class: 'btn btn-primary'
-			article.row
+			article.row(style="padding: 0;")
 				section.col-md-4
 					.panel.panel-success
 						.panel-heading
@@ -145,10 +145,10 @@ header.header
 								i.glyphicon.glyphicon-chevron-up.clickable
 						.panel-body
 							- site = Site.find(@chatRoom.site_id)
-							= form_for :items, url: set_item_store_path, html: {class: "form-horizontal"} do |f|
-								fieldset
+							= form_for :items, url: set_item_store_path, html: {class: "item-select-form form-horizontal"} do |f|
+								fieldset.items
 									- site.items.all.each do |item|
-										.form-group(style="padding: 0 15px;")
+										.form-group.field(style="padding: 0 15px;")
 											= f.radio_button :item_id, item.id, checked: item.selected == true, required: true
 											= f.label "item_id_#{item.id}".to_sym, item.name
 											= f.hidden_field :url, value: item.url

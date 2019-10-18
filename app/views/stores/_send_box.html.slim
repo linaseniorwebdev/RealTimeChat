@@ -1,10 +1,10 @@
-.panel.panel-primary
+.panel.panel-primary.chat-dlg(style="margin-bottom: 60px;")
 	.panel-heading
 		h3.panel-title チャット
 		span.pull-right.clickable
 			i.glyphicon.glyphicon-chevron-up
 	.panel-body
-		.row
+		#messages.row.admin
 			ul.timeline
 				- @chatRoom.messages.each do |msg|
 					li class=[msg.toUser == true ? 'timeline-inverted' : '']
@@ -16,11 +16,11 @@
 								- else
 									h4.timeline-title = msg.message
 		= form_for :message, url: send_msg_store_path, remote: true, authenticity_token: true, html: {class: "form-horizontal"} do |f|
-			.form-group.row
-				.col-xs-10
+			.form-group.row.msg-field(style="padding: 0; margin: 10px 0;")
+				.col-xs-9.col-sm-10(style="padding-left: 10px; padding-right: 5px;")
 					= f.hidden_field :isPayURL, value: 0
 					= f.hidden_field :chat_room_id, value: @chatRoom.id
 					= f.hidden_field :toUser, value: toUser
 					= f.text_area :message, placeholder: 'こちらで入力', rows: 2, required: true, class: "form-control"
-				.col-xs-2
+				.col-xs-3.col-sm-2(style="padding-left: 5px; padding-right: 10px;")
 					= f.submit '送信', data: {send: "message"}, class: "btn btn-lg btn-primary"

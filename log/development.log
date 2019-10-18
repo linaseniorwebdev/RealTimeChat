@@ -30488,3 +30488,2626 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:30:48 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Rubystack/ruby/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (31.0ms)
+  Rendered stores/message.html.slim within layouts/application (271.5ms)
+Completed 200 OK in 11842ms (Views: 11756.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:31:01 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:31:01 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:33:48 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (8.1ms)
+  Rendered stores/message.html.slim within layouts/application (42.8ms)
+Completed 200 OK in 3567ms (Views: 3550.8ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:33:52 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:33:52 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:33:52 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:33:58 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HZzv6AxS/CXNnNO7Pr0wCpZQPINAkrYRMBNpesAdW/tTcvYELS7YXpBwuDJNYJ5V7LWN69zaxp+vdwkb59viNw==", "message"=>{"isPayURL"=>"0", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"AAA"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "AAA"], ["toUser", 1], ["created_at", "2019-10-18 14:33:58.568797"], ["updated_at", "2019-10-18 14:33:58.568797"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (184.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"AAA", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 220ms (ActiveRecord: 185.3ms)
+
+
+MessagesChannel transmitting {"message"=>"AAA", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:34:05 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.5ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (8.8ms)
+  Rendered stores/message.html.slim within layouts/application (43.2ms)
+Completed 200 OK in 611ms (Views: 589.6ms | ActiveRecord: 1.8ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:34:06 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:34:06 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:34:06 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/set_item" for 127.0.0.1 at 2019-10-18 23:34:18 +0900
+Processing by StoresController#set_item as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"njYmiVUfRLQbYztwnUMbjXUx/eSdq2SZ7v7Idqcz4c7Q2D9ldGNgz0aPUPnunrXSD9RMjAHjFBdxmqgXgPVYAg==", "items"=>{"item_id"=>"1", "url"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "id"=>"1"}
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mCACHE Store Load (0.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:101
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."store_id" = ?[0m  [["store_id", 1]]
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[36mItem Update (0.5ms)[0m  [1m[33mUPDATE "items" SET "selected" = ? WHERE "items"."id" = ?[0m  [["selected", 0], ["id", 1]]
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[35m (154.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[36mSite Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:70
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:71
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:71
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:71
+  [1m[36mItem Update (0.9ms)[0m  [1m[33mUPDATE "items" SET "selected" = ? WHERE "items"."id" = ?[0m  [["selected", 1], ["id", 1]]
+  ↳ app/controllers/stores_controller.rb:71
+  [1m[35m (164.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:71
+Redirected to http://127.0.0.1:3000/stores/1/message?chat_room_id=8
+Completed 302 Found in 386ms (ActiveRecord: 322.8ms)
+
+
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:34:18 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (8.8ms)
+  Rendered stores/message.html.slim within layouts/application (54.4ms)
+Completed 200 OK in 596ms (Views: 577.6ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:34:19 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:34:19 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:34:19 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:39:05 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (10.6ms)
+  Rendered stores/message.html.slim within layouts/application (45.2ms)
+Completed 200 OK in 598ms (Views: 580.6ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:39:06 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:39:06 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:39:06 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:39:55 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (1.7ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (11.0ms)
+  Rendered stores/message.html.slim within layouts/application (58.0ms)
+Completed 200 OK in 763ms (Views: 746.7ms | ActiveRecord: 2.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:39:56 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:39:56 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:39:56 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:41:48 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (1.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (13.9ms)
+  Rendered stores/message.html.slim within layouts/application (48.7ms)
+Completed 200 OK in 662ms (Views: 643.8ms | ActiveRecord: 2.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:41:49 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:41:49 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:41:49 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:41:53 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TuKrQlvWu3eCobtjUFPJVFGz8/ZDYWvLJAG/sq568mkADLKueqqfDN9N0OojjmcLK1ZCnt8pG0W7Zd/TibxLpQ==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 14:41:54.048599"], ["updated_at", "2019-10-18 14:41:54.048599"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (365.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 867ms (ActiveRecord: 366.3ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:41:58 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (17.1ms)
+  Rendered stores/message.html.slim within layouts/application (45.0ms)
+Completed 200 OK in 580ms (Views: 562.0ms | ActiveRecord: 0.8ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:41:59 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:41:59 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:41:59 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:45:21 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.4ms)
+  Rendered stores/message.html.slim within layouts/application (50.9ms)
+Completed 200 OK in 615ms (Views: 597.5ms | ActiveRecord: 0.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:45:22 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:45:22 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:45:22 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:45:29 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DXxI/q49GpauXxkBrVK60jC8kpQ1b85tcC70Txaxl9BDklESj0E+7fOzcojejxSNSlkj/KknvuPvSpQuMXcuHA==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 14:45:29.797600"], ["updated_at", "2019-10-18 14:45:29.797600"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (124.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 140ms (ActiveRecord: 125.6ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:45:32 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (9.0ms)
+  Rendered stores/message.html.slim within layouts/application (36.7ms)
+Completed 200 OK in 599ms (Views: 585.6ms | ActiveRecord: 1.0ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:45:32 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:45:33 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:45:33 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:47:44 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.5ms)
+  Rendered stores/message.html.slim within layouts/application (51.7ms)
+Completed 200 OK in 1669ms (Views: 1642.8ms | ActiveRecord: 1.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:47:46 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:47:46 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:47:46 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:48:28 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.8ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.5ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (12.6ms)
+  Rendered stores/message.html.slim within layouts/application (41.3ms)
+Completed 200 OK in 1267ms (Views: 1232.3ms | ActiveRecord: 1.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:48:30 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:48:30 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:48:30 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:48:35 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gyVNrt6vONXgjmsfiKOKMvhocGmA0BZzJS2YzALk7ijNy1RC/9Mcrr1iAJb7fiRtgo3BARyYZv26SfitJSJX5A==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 14:48:35.768201"], ["updated_at", "2019-10-18 14:48:35.768201"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (188.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 217ms (ActiveRecord: 189.2ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:52:18 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gyVNrt6vONXgjmsfiKOKMvhocGmA0BZzJS2YzALk7ijNy1RC/9Mcrr1iAJb7fiRtgo3BARyYZv26SfitJSJX5A==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"A"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "A"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 14:52:18.203802"], ["updated_at", "2019-10-18 14:52:18.203802"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (191.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"A", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 206ms (ActiveRecord: 192.3ms)
+
+
+MessagesChannel transmitting {"message"=>"A", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:52:21 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gyVNrt6vONXgjmsfiKOKMvhocGmA0BZzJS2YzALk7ijNy1RC/9Mcrr1iAJb7fiRtgo3BARyYZv26SfitJSJX5A==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"ASDAS"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "ASDAS"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 14:52:21.767802"], ["updated_at", "2019-10-18 14:52:21.767802"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (180.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"ASDAS", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 202ms (ActiveRecord: 181.9ms)
+
+
+MessagesChannel transmitting {"message"=>"ASDAS", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:52:30 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.6ms)
+  Rendered stores/message.html.slim within layouts/application (52.3ms)
+Completed 200 OK in 1418ms (Views: 1397.5ms | ActiveRecord: 1.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:52:31 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:52:31 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:52:31 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:52:34 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lbWoBDkfCguhnRb69kA4xyecfpRDyQ4Y3KEcAMRGuLbbW7HoGGMucPxxfXOFnZaYXXnP/N+BfpZDxXxh44ABeg==", "message"=>{"isPayURL"=>"0", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"ADA"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "ADA"], ["toUser", 1], ["created_at", "2019-10-18 14:52:34.697202"], ["updated_at", "2019-10-18 14:52:34.697202"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (191.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"ADA", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 396ms (ActiveRecord: 192.9ms)
+
+
+MessagesChannel transmitting {"message"=>"ADA", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:52:42 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (9.3ms)
+  Rendered stores/message.html.slim within layouts/application (48.2ms)
+Completed 200 OK in 658ms (Views: 635.9ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:52:42 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:52:43 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:52:43 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-18 23:52:50 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THlCt4wWaVq+TsJuU/gyP3CKzv2FqhAY+SpPNKGLHbICl1tbrWpNIeOiqecgJZxgCm9/lRniYJZmTi9Vhk2kfg==", "message"=>{"isPayURL"=>"0", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"ASFDF"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "ASFDF"], ["toUser", 1], ["created_at", "2019-10-18 14:52:50.537402"], ["updated_at", "2019-10-18 14:52:50.537402"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (208.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"ASFDF", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 573ms (ActiveRecord: 209.1ms)
+
+
+MessagesChannel transmitting {"message"=>"ASFDF", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:58:48 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.6ms)
+  Rendered stores/message.html.slim within layouts/application (51.3ms)
+Completed 200 OK in 632ms (Views: 610.4ms | ActiveRecord: 1.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:58:49 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:58:51 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:58:51 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:59:09 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.9ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (16.3ms)
+  Rendered stores/message.html.slim within layouts/application (48.0ms)
+Completed 200 OK in 629ms (Views: 608.4ms | ActiveRecord: 2.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:59:09 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:59:11 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:59:11 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-18 23:59:48 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (1.5ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (14.8ms)
+  Rendered stores/message.html.slim within layouts/application (71.9ms)
+Completed 200 OK in 660ms (Views: 639.4ms | ActiveRecord: 2.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:59:48 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-18 23:59:50 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-18 23:59:50 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:00:18 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MF+RgPAvvV6UHWuuvweXDpwVqOQk517Sqe1UsFxPBA9+sYhs0VOZJcnxACfM2jlR5vAZjLivLlw2iTTRe4m9ww==", "message"=>{"isPayURL"=>"0", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"AARE"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "AARE"], ["toUser", 1], ["created_at", "2019-10-18 15:00:18.143403"], ["updated_at", "2019-10-18 15:00:18.143403"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"AARE", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 117ms (ActiveRecord: 102.3ms)
+
+
+MessagesChannel transmitting {"message"=>"AARE", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:10:05 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (12.9ms)
+  Rendered stores/message.html.slim within layouts/application (38.9ms)
+Completed 200 OK in 1333ms (Views: 1317.5ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:10:06 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:10:06 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:10:06 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:11 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 15:10:12.046206"], ["updated_at", "2019-10-18 15:10:12.046206"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (171.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 674ms (ActiveRecord: 172.1ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:14 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"false", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"ASDASD"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "ASDASD"], ["toUser", 1], ["created_at", "2019-10-18 15:10:14.725206"], ["updated_at", "2019-10-18 15:10:14.725206"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (279.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"ASDASD", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 293ms (ActiveRecord: 280.2ms)
+
+
+MessagesChannel transmitting {"message"=>"ASDASD", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:19 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"false", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"adfa"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "adfa"], ["toUser", 1], ["created_at", "2019-10-18 15:10:19.233206"], ["updated_at", "2019-10-18 15:10:19.233206"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (104.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"adfa", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 124ms (ActiveRecord: 105.5ms)
+
+
+MessagesChannel transmitting {"message"=>"adfa", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:22 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 15:10:22.655206"], ["updated_at", "2019-10-18 15:10:22.655206"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (213.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 232ms (ActiveRecord: 215.0ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:24 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"false", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"AS"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "AS"], ["toUser", 1], ["created_at", "2019-10-18 15:10:24.644206"], ["updated_at", "2019-10-18 15:10:24.644206"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (194.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"AS", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 211ms (ActiveRecord: 195.7ms)
+
+
+MessagesChannel transmitting {"message"=>"AS", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:28 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"false", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"asf"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "asf"], ["toUser", 1], ["created_at", "2019-10-18 15:10:28.170206"], ["updated_at", "2019-10-18 15:10:28.170206"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (113.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"asf", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 132ms (ActiveRecord: 114.6ms)
+
+
+MessagesChannel transmitting {"message"=>"asf", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:10:44 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mu+bSaT6SF3j/E11ubBC3VuE/kkNYK1BXPPJ341i0DXUAYKlhYZsJr4QJvzKbeyCIWFPIZEo3c/Dl6m+qqRp+Q==", "message"=>{"isPayURL"=>"false", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"This is \nA map"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "This is \nA map"], ["toUser", 1], ["created_at", "2019-10-18 15:10:44.683806"], ["updated_at", "2019-10-18 15:10:44.683806"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (216.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"This is \nA map", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 234ms (ActiveRecord: 217.7ms)
+
+
+MessagesChannel transmitting {"message"=>"This is \nA map", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:15:46 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.7ms)
+  Rendered stores/message.html.slim within layouts/application (55.0ms)
+Completed 200 OK in 621ms (Views: 596.9ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:15:46 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:15:46 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:15:46 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:15:55 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qKuY/eZTJ2x1rdWqW/B9ggnaALcT6ELC0wz6cW3Q+uPmRYERxy8DFyhBviMoLdPdcz+x34+gMkxMaJoQShZDLw==", "message"=>{"isPayURL"=>"0", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"ASDASD"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "ASDASD"], ["toUser", 1], ["created_at", "2019-10-18 15:15:55.711408"], ["updated_at", "2019-10-18 15:15:55.711408"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (202.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"ASDASD", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 218ms (ActiveRecord: 203.7ms)
+
+
+MessagesChannel transmitting {"message"=>"ASDASD", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:19:28 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.9ms)
+  Rendered stores/message.html.slim within layouts/application (44.2ms)
+Completed 200 OK in 926ms (Views: 898.9ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:19:29 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:19:31 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:19:31 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:19:37 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jRpKu4pB9pVzok/Y95h3za2XRDgDZohax5N1/D+qprvD9FNXqz3S7i5OJFGERdmS13L1UJ8u+NRY9xWdGGwfdw==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 15:19:37.876809"], ["updated_at", "2019-10-18 15:19:37.876809"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (206.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 232ms (ActiveRecord: 207.0ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:20:48 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (12.6ms)
+  Rendered stores/message.html.slim within layouts/application (46.8ms)
+Completed 200 OK in 831ms (Views: 809.5ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:20:48 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:20:50 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:20:50 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:20:55 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Kaq+dhMG7clc7SiYdugQeJKr8sQl5J5MsLVDKL2nFO6SLMV+TA/zHif3ysSBg4emK8eo4zf4vetprVthTAlnw==", "message"=>{"isPayURL"=>"0", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"ASAD"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "ASAD"], ["toUser", 1], ["created_at", "2019-10-18 15:20:55.985809"], ["updated_at", "2019-10-18 15:20:55.985809"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (195.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"ASAD", :toUser=>true, :roomId=>8, :isPayURL=>false}
+Completed 200 OK in 692ms (ActiveRecord: 196.1ms)
+
+
+MessagesChannel transmitting {"message"=>"ASAD", "toUser"=>true, "roomId"=>8, "isPayURL"=>false} (via streamed from messages)
+Started POST "/stores/1/send_msg" for 127.0.0.1 at 2019-10-19 00:20:59 +0900
+Processing by StoresController#send_msg as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Kaq+dhMG7clc7SiYdugQeJKr8sQl5J5MsLVDKL2nFO6SLMV+TA/zHif3ysSBg4emK8eo4zf4vetprVthTAlnw==", "message"=>{"isPayURL"=>"true", "chat_room_id"=>"8", "toUser"=>"true", "message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"}, "commit"=>"送信", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[36mMessage Create (2.5ms)[0m  [1m[32mINSERT INTO "messages" ("chat_room_id", "message", "toUser", "isPayURL", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["chat_room_id", 8], ["message", "http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/"], ["toUser", 1], ["isPayURL", 1], ["created_at", "2019-10-18 15:20:59.536809"], ["updated_at", "2019-10-18 15:20:59.536809"]]
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (119.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/stores_controller.rb:58
+[ActionCable] Broadcasting to messages: {:message=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", :toUser=>true, :roomId=>8, :isPayURL=>true}
+Completed 200 OK in 139ms (ActiveRecord: 122.3ms)
+
+
+MessagesChannel transmitting {"message"=>"http://ec2-18-179-30-29.ap-northeast-1.compute.amazonaws.com/", "toUser"=>true, "roomId"=>8, "isPayURL"=>true} (via streamed from messages)
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:22:00 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.8ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (12.0ms)
+  Rendered stores/message.html.slim within layouts/application (50.6ms)
+Completed 200 OK in 622ms (Views: 599.6ms | ActiveRecord: 2.0ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:22:01 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:22:02 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:22:02 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:22:45 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.1ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (14.6ms)
+  Rendered stores/message.html.slim within layouts/application (49.0ms)
+Completed 200 OK in 636ms (Views: 620.4ms | ActiveRecord: 1.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:22:46 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:22:47 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:22:47 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:23:39 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (16.2ms)
+  Rendered stores/message.html.slim within layouts/application (48.3ms)
+Completed 200 OK in 636ms (Views: 623.2ms | ActiveRecord: 1.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:23:40 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:23:42 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:23:42 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:26:35 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (15.6ms)
+  Rendered stores/message.html.slim within layouts/application (52.2ms)
+Completed 200 OK in 653ms (Views: 629.3ms | ActiveRecord: 1.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:26:35 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:26:36 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:26:36 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:26:55 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.6ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (17.9ms)
+  Rendered stores/message.html.slim within layouts/application (47.6ms)
+Completed 200 OK in 722ms (Views: 700.3ms | ActiveRecord: 1.8ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:26:56 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:26:56 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:26:56 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:27:08 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (14.4ms)
+  Rendered stores/message.html.slim within layouts/application (46.6ms)
+Completed 200 OK in 627ms (Views: 606.0ms | ActiveRecord: 1.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:27:09 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:27:09 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:27:09 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:27:37 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.1ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (9.4ms)
+  Rendered stores/message.html.slim within layouts/application (51.2ms)
+Completed 200 OK in 685ms (Views: 663.5ms | ActiveRecord: 0.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:27:37 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:27:38 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:27:38 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:27:47 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (11.6ms)
+  Rendered stores/message.html.slim within layouts/application (51.7ms)
+Completed 200 OK in 621ms (Views: 592.7ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:27:48 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:27:48 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:27:48 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:28:37 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (2.0ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (10.4ms)
+  Rendered stores/message.html.slim within layouts/application (55.0ms)
+Completed 200 OK in 687ms (Views: 664.2ms | ActiveRecord: 2.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:28:38 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:28:39 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:28:39 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:28:54 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (1.6ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (18.4ms)
+  Rendered stores/message.html.slim within layouts/application (62.5ms)
+Completed 200 OK in 738ms (Views: 707.8ms | ActiveRecord: 2.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:28:54 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:28:55 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:28:55 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/stores/1/message?chat_room_id=8" for 127.0.0.1 at 2019-10-19 00:29:01 +0900
+Processing by StoresController#message as HTML
+  Parameters: {"chat_room_id"=>"8", "id"=>"1"}
+  [1m[36mStore Load (1.2ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/stores_helper.rb:7
+  [1m[36mChatRoom Load (0.5ms)[0m  [1m[34mSELECT  "chat_rooms".* FROM "chat_rooms" WHERE "chat_rooms"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/stores_controller.rb:52
+  Rendering stores/message.html.slim within layouts/application
+  [1m[36mSite Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:115
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/stores/message.html.slim:147
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."site_id" = ?[0m  [["site_id", 1]]
+  ↳ app/views/stores/message.html.slim:150
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_room_id" = ?[0m  [["chat_room_id", 8]]
+  ↳ app/views/stores/_send_box.html.slim:9
+  Rendered stores/_send_box.html.slim (14.8ms)
+  Rendered stores/message.html.slim within layouts/application (48.6ms)
+Completed 200 OK in 660ms (Views: 640.6ms | ActiveRecord: 2.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:29:02 +0900
+UsersChannel stopped streaming from users
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+Started GET "/cable" for 127.0.0.1 at 2019-10-19 00:29:02 +0900
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:29:02 +0900
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages
+UsersChannel is transmitting the subscription confirmation
+UsersChannel is streaming from users
+  
+ActionController::RoutingError (No route matches [GET] "/assets/josh/bootstrap.min.css.map"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-10-19 00:29:14 +0900
+______UNSUBSCRIBE______
+MessagesChannel stopped streaming from messages
+UsersChannel stopped streaming from users

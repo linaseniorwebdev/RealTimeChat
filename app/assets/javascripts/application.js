@@ -13,10 +13,13 @@
 
 //= require jquery
 //= require jquery-ui
+//= require jquery.turbolinks
 //= require rails-ujs
 //= require activestorage
+//= require turbolinks
 
 //= require cable
+//= require stores
 //= require_tree ./channels
 
 function add_fields(link, association, content) {

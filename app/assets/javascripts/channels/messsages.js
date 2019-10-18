@@ -2,7 +2,7 @@ App.messages = App.cable.subscriptions.create('MessagesChannel', {
 	received: function(data) {
 		if (data.message) {
 			if (data.roomId + '' == $('#message_chat_room_id').val()) {
-				$('#messages').append(this.renderMessage(data));
+				$('#messages ul').append(this.renderMessage(data));
 				updateMessageView();
 			}
 		}
@@ -11,12 +11,12 @@ App.messages = App.cable.subscriptions.create('MessagesChannel', {
 	},
 
 	renderMessage: function(data) {
-		msg = "<span class='msg'>" + data.message + "</span>";
+		msg = "<h4 class='timeline-title'>" + data.message + "</h4>";
 		if (data.isPayURL == true) {
-			msg = "<a class='pay' href='" + data.message + "'>決済ページへ</a>"
+			msg = "<a class='btn btn-primary' href='" + data.message + "'>決済ページへ</a>"
 		}
-		toUserMsg = "<div class='right'>" + msg + "</div>";
-		toAdminMsg = "<div class='left'>" + msg + "</div>";
+		toUserMsg = "<li class='timeline-inverted'><div class='timeline-panel'><div class='timeline-heading'>" + msg + "</div></div></li>";
+		toAdminMsg = "<li class='timeline'><div class='timeline-panel'><div class='timeline-heading'>" + msg + "</div></div></li>";
 		return data.toUser == true ? toUserMsg : toAdminMsg
 	},
 
