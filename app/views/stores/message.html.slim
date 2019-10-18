@@ -1,19 +1,160 @@
-= link_to '加盟店へ', store_path(id: @chatRoom.site.store_id)
+css:
+	.timeline {
+		list-style: none;
+		padding: 20px 0 20px;
+		position: relative;
+	}
 
-- site = Site.find(@chatRoom.site_id)
+	.timeline > li {
+		margin-bottom: 20px;
+		position: relative;
+	}
 
-= form_for :items, url: set_item_store_path, html: {class: 'item-select-form'} do |f|
-	.items
-		- site.items.all.each do |item|
-			.field
-				= f.radio_button :item_id, item.id, checked: item.selected == true, required: true
-				= f.label "item_id_#{item.id}".to_sym, item.name
-				= f.hidden_field :url, value: item.url
-	buttn.item-select 商品選択
+	.timeline > li:before, .timeline > li:after {
+		content: " ";
+		display: table;
+	}
 
-.chat-dlg
-	h2.title チャット
-	.content.hidden
-		#messages.admin
-			= render 'messages'
-		= render 'send_box', toUser: true
+	.timeline > li:after {
+		clear: both;
+	}
+
+	.timeline > li:before, .timeline > li:after {
+		content: " ";
+		display: table;
+	}
+
+	.timeline > li:after {
+		clear: both;
+	}
+
+	.timeline > li > .timeline-panel {
+		width: 65%;
+		float: left;
+		border: 1px solid #d4d4d4;
+		border-radius: 2px;
+		padding: 20px;
+		position: relative;
+		-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+		margin-left: calc(35% - 30px);
+	}
+
+	.timeline > li > .timeline-panel:before {
+		position: absolute;
+		top: 26px;
+		right: -15px;
+		display: inline-block;
+		border-top: 15px solid transparent;
+		border-left: 15px solid #ccc;
+		border-right: 0 solid #ccc;
+		border-bottom: 15px solid transparent;
+		content: " ";
+	}
+
+	.timeline > li > .timeline-panel:after {
+		position: absolute;
+		top: 27px;
+		right: -14px;
+		display: inline-block;
+		border-top: 14px solid transparent;
+		border-left: 14px solid #fff;
+		border-right: 0 solid #fff;
+		border-bottom: 14px solid transparent;
+		content: " ";
+	}
+
+	.timeline > li.timeline-inverted > .timeline-panel {
+		float: right;
+		margin-left: 0;
+		margin-right: calc(35% - 30px);
+	}
+
+	.timeline > li.timeline-inverted > .timeline-panel:before {
+		border-left-width: 0;
+		border-right-width: 15px;
+		left: -15px;
+		right: auto;
+	}
+
+	.timeline > li.timeline-inverted > .timeline-panel:after {
+		border-left-width: 0;
+		border-right-width: 14px;
+		left: -14px;
+		right: auto;
+	}
+
+	.timeline > li.timeline-inverted > .timeline-panel > .timeline-heading {
+		text-align: right;
+	}
+
+	.timeline-title {
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 3rem;
+		color: inherit;
+		white-space: pre-wrap;
+	}
+header.header
+	nav.navbar.navbar-static-top role="navigation"
+		div
+			a.navbar-btn.sidebar-toggle data-toggle="offcanvas" href="#" role="button"
+				.responsive_nav
+.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			.page-sidebar.sidebar-nav
+				ul#menu.page-sidebar-menu
+					li.active
+						a href="#"
+							i.livicon data-c="#00bc8c" data-hc="#00bc8c" data-loop="true" data-name="users" data-size="18"
+							span.title ストアー
+							span.fa.arrow
+						ul.sub-menu
+							li
+								a href="/stores/#{@chatRoom.site.store_id}"
+									i.fa.fa-angle-double-right
+									| ストアー情報
+							li
+								a href="/stores/#{@chatRoom.site.store_id}/edit"
+									i.fa.fa-angle-double-right
+									| ストアー編集
+							li
+								a href="/stores/#{@chatRoom.site.store_id}/stuff"
+									i.fa.fa-angle-double-right
+									| スタッフ
+					li
+						a data-method="delete" href="/stores/#{@chatRoom.site.store_id}/logout" rel="nofollow"
+							i.livicon data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true" data-name="sign-out" data-size="18"
+							span.title ログアウト
+	aside.right-side
+		section.content-header
+			h1 ストアー情報
+			ol.breadcrumb
+				li ホーム
+				li.active チャットルーム
+		section.content.padding-15
+			article.text-right(style="margin-bottom: 15px;")
+				= link_to '加盟店へ', store_path(id: @chatRoom.site.store_id), class: 'btn btn-primary'
+			article.row
+				section.col-md-4
+					.panel.panel-success
+						.panel-heading
+							h4.panel-title &nbsp;
+							span.pull-right
+								i.glyphicon.glyphicon-chevron-up.clickable
+						.panel-body
+							- site = Site.find(@chatRoom.site_id)
+							= form_for :items, url: set_item_store_path, html: {class: "form-horizontal"} do |f|
+								fieldset
+									- site.items.all.each do |item|
+										.form-group(style="padding: 0 15px;")
+											= f.radio_button :item_id, item.id, checked: item.selected == true, required: true
+											= f.label "item_id_#{item.id}".to_sym, item.name
+											= f.hidden_field :url, value: item.url
+									.form-group(style="padding: 0 15px; margin-bottom: 0;")
+										button.item-select.btn.btn-success 商品選択
+				section.col-md-8
+					= render 'send_box', toUser: true
+a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
+	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"

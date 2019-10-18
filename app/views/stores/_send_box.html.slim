@@ -1,8 +1,26 @@
-.send-box
-	= form_for :message, url: send_msg_store_path, remote: true, authenticity_token: true, html: {} do |f|
-		.msg-field
-			= f.hidden_field :isPayURL, value: 0
-			= f.hidden_field :chat_room_id, value: @chatRoom.id
-			= f.hidden_field :toUser, value: toUser
-			= f.text_area :message, placeholder: 'こちらで入力', rows: 2, required: true
-			= f.submit '送信', data: {send: "message"}
+.panel.panel-primary
+	.panel-heading
+		h3.panel-title チャット
+		span.pull-right.clickable
+			i.glyphicon.glyphicon-chevron-up
+	.panel-body
+		.row
+			ul.timeline
+				- @chatRoom.messages.each do |msg|
+					li class=[msg.toUser == true ? 'timeline-inverted' : '']
+						.timeline-panel
+							.timeline-heading
+								- if msg.isPayURL == true
+									h4.timeline-title
+										= link_to '決済ページへ', msg.message, class: 'btn btn-primary'
+								- else
+									h4.timeline-title = msg.message
+		= form_for :message, url: send_msg_store_path, remote: true, authenticity_token: true, html: {class: "form-horizontal"} do |f|
+			.form-group.row
+				.col-xs-10
+					= f.hidden_field :isPayURL, value: 0
+					= f.hidden_field :chat_room_id, value: @chatRoom.id
+					= f.hidden_field :toUser, value: toUser
+					= f.text_area :message, placeholder: 'こちらで入力', rows: 2, required: true, class: "form-control"
+				.col-xs-2
+					= f.submit '送信', data: {send: "message"}, class: "btn btn-lg btn-primary"

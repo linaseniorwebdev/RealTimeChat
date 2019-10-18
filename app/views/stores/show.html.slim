@@ -132,7 +132,7 @@ header.header
 									td = distance_of_time_in_words(Time.zone.now - user.store_enter_time)
 									td = room.stuff.nil? ? '＿ ＿ ＿' : room.stuff.name
 									td
-										= link_to "M", message_store_path(chat_room_id: room.id), class: "btn btn-sm btn-success"
-										= link_to "削除", delete_user_store_path(user_id: user.id), method: :post, class: "btn btn-sm btn-danger"
+										= link_to "開始", message_store_path(chat_room_id: room.id), class: "btn btn-sm btn-success"
+										= link_to "削除", delete_user_store_path(user_id: user.id), method: :post, class: "btn btn-sm btn-danger", style: "margin-left: 10px;"
 a#back-to-top.btn.btn-primary.btn-lg.back-to-top data-placement="left" data-toggle="tooltip" href="#" role="button" title=("Return to top")
 	i.livicon data-c="#fff" data-hc="white" data-loop="true" data-name="plane-up" data-size="18"
